@@ -8,14 +8,14 @@ public class BubbleSort {
 			nums[i] = (int) Math.ceil(Math.random()*nums.length);
 		}
 	}
-	
+
 	public static void printArray(int[] nums) {
 		for (int i = 0; i < nums.length; i++) {
 			System.out.print(nums[i] + " ");
 		}
 	}
-	
-	public static void bubbleSort(int[] nums) {
+
+	public static void swap(int[] nums) {
 		for (int i = 0; i < nums.length - 1; i++) {
 			int temp = nums[i];
 			if (nums[i] > nums[i + 1]) {
@@ -24,12 +24,23 @@ public class BubbleSort {
 			}
 		}
 	}
-	
+
+	public static void bubbleSort(int[] nums) {
+		for (int i = 0; i < nums.length - 1; i++) {
+			if (nums[i] > nums[i + 1]) {
+				swap(nums);
+			}
+		}
+	}
+
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int elements = scan.nextInt();
 		int[] array = new int[elements];
 		populateArray(array);
+		printArray(array);
+		System.out.println();
+		bubbleSort(array);
 		printArray(array);
 	}
 
