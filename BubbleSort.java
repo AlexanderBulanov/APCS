@@ -1,19 +1,7 @@
+//Alexander Bulanov, Adam Barszczak
 import java.util.Scanner;
 
-public class BubbleSort {
-	public int[] nums;
-
-	public static void populateArray(int[] nums) {
-		for (int i = 0; i < nums.length; i++) {
-			nums[i] = (int) Math.ceil(Math.random()*nums.length);
-		}
-	}
-
-	public static void printArray(int[] nums) {
-		for (int i = 0; i < nums.length; i++) {
-			System.out.print(nums[i] + " ");
-		}
-	}
+public class BubbleSort extends SortingTools{
 
 	public static void swap(int[] nums) {
 		for (int i = 0; i < nums.length - 1; i++) {
