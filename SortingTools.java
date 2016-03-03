@@ -2,7 +2,12 @@
 import java.util.Scanner;
 
 public class SortingTools {
-	public int[] nums;
+	
+	public static int[] buildIntArray(int nums) {
+		int[] array = new int[nums];
+		populateArray(array);
+		return array;
+	}
 
 	public static void populateArray(int[] nums) {
 		for (int i = 0; i < nums.length; i++) {
@@ -14,6 +19,16 @@ public class SortingTools {
 		for (int i = 0; i < nums.length; i++) {
 			System.out.print(nums[i] + " ");
 		}
+		System.out.println();
+	}
+	
+	public static boolean isSorted(int[] nums) {
+		for (int i = 0; i < nums.length - 1; i++) {
+			if (nums[i] > nums[i+1]) {
+				return false;
+			}
+		}
+		return true;
 	}
 	
 }
