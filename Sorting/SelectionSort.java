@@ -23,12 +23,12 @@ public class SelectionSort extends SortingTools{
 	
 	public static void main (String[] args){
 		int[] x;
-		x = SortingTools.buildIntArray(10000);
-		SortingTools.printArray(x);
+		x = buildIntArray(10000);
+		printArray(x);
 		//System.out.println(select(x, 5));
 		selectionSort(x);
-		SortingTools.printArray(x);
-		System.out.println(SortingTools.isSorted(x));
+		printArray(x);
+		System.out.println(isSorted(x));
 	}
 }
 
