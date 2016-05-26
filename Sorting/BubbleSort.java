@@ -1,7 +1,8 @@
-//Alexander Bulanov, Adam Barszczak
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
-public class BubbleSort extends SortingTools{
+public class BubbleSort extends SortingTools {
+	public int[] nums;
 
 	public static void swap(int[] nums) {
 		for (int i = 0; i < nums.length - 1; i++) {
@@ -20,14 +21,18 @@ public class BubbleSort extends SortingTools{
 	}
 
 	public static void main(String[] args) {
+		DecimalFormat numberFormat = new DecimalFormat("#.000000");
 		Scanner scan = new Scanner(System.in);
 		int elements = scan.nextInt();
-		int[] array = new int[elements];
-		populateArray(array);
+		int[] array = buildIntArray(elements);
 		printArray(array);
-		System.out.println();
+		long startTime = System.nanoTime();
 		bubbleSort(array);
+		long endTime = System.nanoTime();
+		double elapsedTime = (endTime - startTime)/1000000000.0;
 		printArray(array);
+		System.out.println("Sorting took " + numberFormat.format(elapsedTime) + " s"); //elapsedTime rounded for display purposes
+		System.out.println();
 	}
 
 }
