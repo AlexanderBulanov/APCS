@@ -22,13 +22,7 @@ public class Display extends JFrame {
 		return totalsum;
 	}
 	
-	public static void main(String[] args) {
-		Display disp = new Display();
-		disp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		disp.setSize(1200, 800);
-		disp.setTitle("Histogram");
-		disp.setVisible(true);
-		disp.histogram();
+	public void paintComponent(Graphics g) {
+		Graphics2D g2 = (Graphics2D) g;
 	}
-	
 }
